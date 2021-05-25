@@ -28,6 +28,15 @@ public class GenerateHand : MonoBehaviour
         {
             
             int randcard = Random.Range(0, cards.Count);
+
+            if (cards[randcard].CardType == Card.cardType.Blank)
+            {
+                if (Random.Range(0,1) == 1)
+                {
+                    randcard = Random.Range(0, cards.Count);
+                }
+            }
+           
             GameObject handcard = Instantiate(cardTemplate, transform);
             hand.Add(handcard);
             
@@ -76,7 +85,7 @@ public class GenerateHand : MonoBehaviour
 
                 if (card.transform.position.x < hand[i].transform.position.x && hand.Count < handSize)
                 {
-                    Debug.Log("add");
+
                     hand.Insert(i, card);
                     break;
                 }

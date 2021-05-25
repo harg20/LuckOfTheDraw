@@ -41,6 +41,11 @@ public class PlayerHealth : MonoBehaviour
             dd.UpdateDisplay();
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.layer == 8)
+        {
+            TakeDamage(2);
+            rb.AddRelativeForce(0, 10000, 0);
+        }
         
     }
     public void TakeDamage(float damage)
