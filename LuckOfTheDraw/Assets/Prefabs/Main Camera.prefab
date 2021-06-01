@@ -100,7 +100,7 @@ MonoBehaviour:
   target: {fileID: 0}
   height: 20
   distance: 15
-  rotDamping: 5
+  rotDamping: 3
 --- !u!1 &1636497012139151848
 GameObject:
   m_ObjectHideFlags: 0

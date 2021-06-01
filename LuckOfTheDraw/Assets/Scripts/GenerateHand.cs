@@ -23,7 +23,7 @@ public class GenerateHand : MonoBehaviour
  
     public void NewHand()
     {
-        cards = cardData.currentCards;
+        cards = cardData.rarityScaledList;
        
         for (int i = hand.Count; i < handSize; i++)
         {
