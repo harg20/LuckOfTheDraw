@@ -16,11 +16,11 @@ MonoBehaviour:
   image: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   splitstackcount: 0
   hitscan: 1
+  rarity: 3
   projectiles: 4
   baseProjectiles: 4
   damage: 1
   baseDamage: 1
   CardType: 0
   EffectType: 1
-  inheritedEffects: 
   effects: Adds splitfires 4 Dealing 1 Damage each

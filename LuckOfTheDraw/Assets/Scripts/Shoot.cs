@@ -13,6 +13,7 @@ public class Shoot : MonoBehaviour
     public GameObject smokeEffect;
     public GameObject hitEffect;
     public GameObject explosionEffect;
+    public GameObject explosiveBarrel;
     public float spreadCone;
     float goproj;
     GameObject nextbullet;
@@ -31,7 +32,7 @@ public class Shoot : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             shoot();
             for (int i = 0; i < handholder.hand.Count; i++)
@@ -92,6 +93,16 @@ public class Shoot : MonoBehaviour
 
                     handholder.RemoveCard();
                     break;
+
+
+                case Card.effectType.explosiveBarrel:
+                    var barrel = Instantiate(explosiveBarrel);
+                    barrel.transform.position = new Vector3(muzzle.position.x, muzzle.position.y, muzzle.position.z);
+                    barrel.GetComponent<Rigidbody>().AddForce(transform.forward * 10);
+
+                    handholder.RemoveCard();
+                    break;
+
 
                 case Card.effectType.addSplitToNext:
                     
@@ -212,6 +223,10 @@ public class Shoot : MonoBehaviour
                             Debug.Log("stealhp");
                             GetComponent<PlayerHealth>().AddHealth((currentCard.damage / 2) + (hand[0].GetComponent<CardDisplay>().lifestealstackcount / 2));
                         }
+                    }
+                    if (hit.collider.tag == "Barrel")
+                    {
+                        hit.transform.gameObject.GetComponent<ExplosiveBarrel>().boom();
                     }
 
 

@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public Rigidbody rb;
     public CardDataTracker cdt;
     public DeckDisplay dd;
+    public Text hptext;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,11 +59,14 @@ public class PlayerHealth : MonoBehaviour
             
             resetmenu.SetActive(true);
         }
+        hptext.text = currentHealth.ToString();
     }
     public void AddHealth(float hpgain)
     {
+
         currentHealth += hpgain;
         hpBar.rectTransform.localScale = new Vector3((currentHealth > 0) ? currentHealth / maxHealth : 0, hpBar.rectTransform.localScale.y, hpBar.rectTransform.localScale.z);
+        hptext.text = currentHealth.ToString();
     }
   
 }

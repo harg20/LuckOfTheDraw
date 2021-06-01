@@ -9,19 +9,32 @@ public class CardDataTracker : ScriptableObject
     public Card[] allCards;
     public List<Card> currentCards;
     public List<Card> possibleCards;
-    
+    public List<Card> rarityScaledList;
+
 
     public void restart()
     {
+        rarityScaledList.Clear();
         currentCards.Clear();
         currentCards.Add(allCards[1]);
+        UpdateScaledList(allCards[1]);
         UpdatePossibleCards();
         Debug.Log("resetti");
     }
     public void pickupcard(Card card)
     {
         currentCards.Add(card);
-       
+        UpdateScaledList(card);
+        Debug.Log("Add");
+
+    }
+    public void UpdateScaledList(Card pickedupcard)
+    {
+        for (int i = 0; i < pickedupcard.rarity; i++)
+        {
+            rarityScaledList.Add(pickedupcard);
+          
+        }
     }
     public void UpdatePossibleCards()
     {

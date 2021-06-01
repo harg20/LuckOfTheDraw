@@ -11,6 +11,7 @@ TagManager:
   - portal
   - pickup
   - MainCanvas
+  - Barrel
   layers:
   - Default
   - TransparentFX

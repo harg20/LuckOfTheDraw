@@ -18,7 +18,10 @@ public class CardDrop : MonoBehaviour
         
     }
 
-   
+    private void OnApplicationQuit()
+    {
+        tracker.restart();
+    }
 
 
     public void SpawnCard(GameObject dropenemy)

@@ -11,13 +11,14 @@ public class Card : ScriptableObject
     public Sprite image;
     public int splitstackcount;
     public bool hitscan;
+    public int rarity;
     public int projectiles;
     public int baseProjectiles;
     public int damage;
     public int baseDamage;
     public enum cardType { Bullet, Blank, Booster};
     public cardType CardType;
-    public enum effectType {none, split, changeProjectile, smokeScreen, homing, shield, teleport, addSplitToNext, addBuffToNext, lifesteal, velocityBoost};
+    public enum effectType {none, split, changeProjectile, smokeScreen, homing, shield, teleport, addSplitToNext, addBuffToNext, lifesteal, velocityBoost, explosiveBarrel};
     public effectType EffectType;
     //public List<effectType> inheritedEffects;
     public string effects;

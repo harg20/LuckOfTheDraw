@@ -11,15 +11,16 @@ public class GenerateHand : MonoBehaviour
     public int handSize = 6;
     public float offset = 50;
     public float cardscale = .75f;
+ 
     
     // Start is called before the first frame update
     void Start()
     {
-        cards = cardData.currentCards;
+        cards = cardData.rarityScaledList;
         NewHand();
         //cardData.restart();
     }
-
+ 
     public void NewHand()
     {
         cards = cardData.currentCards;
@@ -29,13 +30,7 @@ public class GenerateHand : MonoBehaviour
             
             int randcard = Random.Range(0, cards.Count);
 
-            if (cards[randcard].CardType == Card.cardType.Blank)
-            {
-                if (Random.Range(0,1) == 1)
-                {
-                    randcard = Random.Range(0, cards.Count);
-                }
-            }
+        
            
             GameObject handcard = Instantiate(cardTemplate, transform);
             hand.Add(handcard);

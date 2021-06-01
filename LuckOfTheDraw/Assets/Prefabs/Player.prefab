@@ -435,7 +435,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   maxvel: 8
+  slomometer: {fileID: 0}
   rotdat: {fileID: 0}
+  slomocooldown: 1
 --- !u!114 &444185312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,6 +457,7 @@ MonoBehaviour:
   smokeEffect: {fileID: 5846911394232636580, guid: 59146c63bdf867447bb5d7f8e4371ad5, type: 3}
   hitEffect: {fileID: 6267327513065182895, guid: ff718bcce2d302c45b67aee38092eda0, type: 3}
   explosionEffect: {fileID: 5295003730157017257, guid: 4baf7f9e09b72a848a3c14ac0d8f4615, type: 3}
+  explosiveBarrel: {fileID: 7981501012563147336, guid: 6cdda868682ce2d40a36ddd52c814835, type: 3}
   spreadCone: 0.1
   boostforce: 15000
   muzzle: {fileID: 302935257333969885}
@@ -477,6 +480,7 @@ MonoBehaviour:
   rb: {fileID: 3827492279328529826}
   cdt: {fileID: 11400000, guid: 123686af6996b5b46ad6d79324b0005b, type: 2}
   dd: {fileID: 0}
+  hptext: {fileID: 0}
 --- !u!120 &1403510078
 LineRenderer:
   m_ObjectHideFlags: 0
