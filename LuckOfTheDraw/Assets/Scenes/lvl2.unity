@@ -765,6 +765,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 268669129, guid: 4e93e524f7e5c4c42a3e792d0bd191a3, type: 3}
+      propertyPath: snapshotCanvasPrefab
+      value: 
+      objectReference: {fileID: 2654080978173619198, guid: 3a9765b469d010f4da2f7ecc008810d1, type: 3}
     - target: {fileID: 1636497012034157994, guid: 4e93e524f7e5c4c42a3e792d0bd191a3, type: 3}
       propertyPath: target
       value: 

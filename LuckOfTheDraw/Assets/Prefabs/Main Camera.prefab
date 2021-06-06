@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1636497012034157996}
   - component: {fileID: 1636497012034157997}
   - component: {fileID: 1636497012034157994}
+  - component: {fileID: 268669129}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -101,6 +102,20 @@ MonoBehaviour:
   height: 20
   distance: 15
   rotDamping: 3
+--- !u!114 &268669129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636497012034157998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1e20b1465bf764b99239e2a0c36192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useCanvas: 1
+  snapshotCanvasPrefab: {fileID: 0}
 --- !u!1 &1636497012139151848
 GameObject:
   m_ObjectHideFlags: 0
