@@ -15,7 +15,7 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         // portal = GameObject.FindGameObjectWithTag("portal");
-        //portal.SetActive(false);
+        // portal.SetActive(false);
         // enemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
         // Player = GameObject.FindGameObjectWithTag("Player");
         // cam = Camera.main;
@@ -146,7 +146,6 @@ public class EnemyManager : MonoBehaviour
     public void ShootPlayer()
     {
 
-            
             for(int i = 0; i < shooters.Count; i++)
             {
                 shooters[i].GetComponent<Enemy>().ShootPlayer();

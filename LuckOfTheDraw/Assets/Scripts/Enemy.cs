@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
+    [Tooltip("Used in Line of sight calculations")]
+    public float sightRange;
     public float maxHealth;
     public float currentHealth;
     public Image healthUI;
@@ -58,12 +60,38 @@ public class Enemy : MonoBehaviour
         if (firerate > 0)
         {
             firerate -= Time.deltaTime;
-
         }
         if (currentHealth <= 0)
         {
             enemyManager.RemoveEnemy(gameObject);
             Destroy(gameObject);
         }
+    }
+
+    bool hasLineOfSight(GameObject player = null)
+    {
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+
+        //output variable
+        bool I_See_You = false;
+
+        //calculate ray direction
+        Vector3 rayDir = player.transform.position - transform.position;
+        rayDir.y = 0; //Flatten direction to 2D
+
+        //Sight calculation
+        RaycastHit line;
+        Physics.Raycast(transform.position, rayDir, out line, sightRange);
+
+        //wtf am i looking at?
+        if(line.collider.gameObject == player)
+        {
+            I_See_You = true;
+        }
+
+        return I_See_You;
     }
 }
