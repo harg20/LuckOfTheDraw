@@ -12,14 +12,18 @@ TagManager:
   - pickup
   - MainCanvas
   - Barrel
+  - CardUISprite
+  - Charm
+  - bullet
+  - walkable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - barrelbox
   - 
   - AimRaycast
   - Bullet

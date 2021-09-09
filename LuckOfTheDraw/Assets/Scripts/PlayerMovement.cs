@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float maxvel;
     public Image slomometer;
-    
+    public IKFootSolver l;
+    public IKFootSolver r;
     Vector3 positionlastframe;
     public Transform rotdat;
     Rigidbody rb;
@@ -19,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         fdt = Time.fixedDeltaTime;
-        
+        slomometer = GameObject.Find("Slomo").GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -31,6 +32,10 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerInput()
     {
+        //Debug.Log((transform.position-positionlastframe));
+            l.forwardAdjust = ( transform.position-positionlastframe)*l.speed;
+            r.forwardAdjust = (transform.position - positionlastframe)*r.speed;
+
 
         if (Input.GetKey(KeyCode.Space) && slomometer.rectTransform.localScale.x > 0)
         {
@@ -73,5 +78,6 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
+        positionlastframe = transform.position;
     }
 }

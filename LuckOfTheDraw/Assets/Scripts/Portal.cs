@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
+    public GameObject deathpopup;
     EnemyManager emg;
     int scn;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        deathpopup = FindObjectOfType<Restart>().transform.parent.gameObject;
+    }
     void Start()
     {
-       emg = GameObject.FindObjectOfType<EnemyManager>();
+        
+        emg = GameObject.FindObjectOfType<EnemyManager>();
        emg.NewScene();
         
     }
@@ -22,6 +28,7 @@ public class Portal : MonoBehaviour
             SceneManager.LoadScene(scn);
             emg.NewScene();
             Debug.Log("Teleport");
+            deathpopup.SetActive(true);
         }
     }
     // Update is called once per frame

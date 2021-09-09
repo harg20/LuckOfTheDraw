@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Shoot : MonoBehaviour
 {
     RaycastHit hit;
+    RaycastHit hitr;
     public Card currentCard;
     public Material shotmat;
     public GenerateHand handholder;
@@ -15,6 +16,7 @@ public class Shoot : MonoBehaviour
     public GameObject explosionEffect;
     public GameObject explosiveBarrel;
     public float spreadCone;
+    public bool chain = true;
     float goproj;
     GameObject nextbullet;
     public float boostforce = 0;
@@ -31,7 +33,7 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (!handholder) { handholder = FindObjectOfType<GenerateHand>(false); }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             shoot();
@@ -41,9 +43,9 @@ public class Shoot : MonoBehaviour
                 handholder.hand[i].GetComponent<CardDisplay>().UpdateCardDisplay();
             }
         }
-        if (Input.GetKeyDown(KeyCode.R) && handholder.hand.Count < handholder.handSize)
+        if (Input.GetKeyDown(KeyCode.R) && handholder.hand.Count < handholder.handSize && !handholder.reloading)
         {
-            handholder.NewHand();
+            handholder.StartCoroutine("NewHand");
             Debug.Log("reload");
         }
         
@@ -81,7 +83,7 @@ public class Shoot : MonoBehaviour
                     //Debug.Log("basic");
                     
                     CreateSpread(spreadCone/2f);
-                    
+                    GetComponent<Rigidbody>().AddRelativeForce(Vector3.back * (boostforce/4));
 
                     handholder.RemoveCard();
                     break;
@@ -171,14 +173,14 @@ public class Shoot : MonoBehaviour
             }
 
         }
-        if (Input.GetKey(KeyCode.Mouse0) && hand.Count < 1)
+        if (Input.GetKey(KeyCode.Mouse0) && hand.Count < 1 && !handholder.reloading)
         {
-            handholder.NewHand();
+            handholder.StartCoroutine("NewHand");
         }
-     
-        
+        if (Input.GetKey(KeyCode.Mouse0) && hand.Count < 1 && handholder.reloading) Debug.Log("click");
 
-        void CreateSpread(float spread)
+
+            void CreateSpread(float spread)
         {
 
             var pellets = hand[0].GetComponent<CardDisplay>().splitstackcount + currentCard.baseProjectiles; // whatever, I'm not a gun expert
@@ -203,21 +205,30 @@ public class Shoot : MonoBehaviour
 
                     var proj = Instantiate(bulletProj,muzzle.position,Quaternion.identity);
                     proj.transform.LookAt(hit.point);
-                    /*
-                    var shot = new GameObject();
-                    shot.AddComponent<hit>();
-                    var shotrenderer = shot.AddComponent<LineRenderer>();
-                    shotrenderer.startWidth = .1f;
-                    shotrenderer.positionCount = 2;
-                    shotrenderer.SetPosition(0, muzzle.position);
-                    shotrenderer.SetPosition(1, hit.point);
-                    shotrenderer.material = shotmat;
-                    */
+                    proj.GetComponent<bulletinfo>().Damage = currentCard.damage;
+
 
                     if (hit.collider.tag == "Enemy")
                     {
-                        hit.transform.GetComponent<Enemy>().TakeDamage(currentCard.damage);
-                        Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                        
+                        //hit.transform.GetComponent<Enemy>().TakeDamage(currentCard.damage);
+                        //Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                        if (chain)
+                        {
+                            var enem = GameObject.FindGameObjectsWithTag("Enemy")[Random.Range(0, GameObject.FindGameObjectsWithTag("Enemy").Length)];
+                            if (Physics.Raycast(hit.point, (enem.transform.position - hit.transform.position), out hitr, 500, 9))
+                            {
+                                Debug.DrawRay(hit.point, (enem.transform.position - hit.transform.position)*300);
+                                if (hitr.collider.tag == "Enemy")
+                                {
+                                   
+                                    //hitr.transform.GetComponent<Enemy>().TakeDamage(currentCard.damage);
+                                    var projt = Instantiate(bulletProj, hit.point, Quaternion.identity);
+                                    projt.GetComponent<bulletinfo>().Damage = currentCard.damage;
+                                    projt.transform.LookAt(enem.transform);
+                                }
+                            }
+                        }
                         if (hand[0].GetComponent<CardDisplay>().effectslist.Contains(Card.effectType.lifesteal))
                         {
                             Debug.Log("stealhp");

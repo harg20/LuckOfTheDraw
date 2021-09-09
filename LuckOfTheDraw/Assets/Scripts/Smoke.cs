@@ -18,11 +18,11 @@ public class Smoke : MonoBehaviour
         distractiontime -= Time.deltaTime;
         if (distractiontime > 0)
         {
-            enemyManager.TargetSmoke(transform);
+           // enemyManager.TargetSmoke(transform);
         }
         else
         {
-            enemyManager.Undistract();
+           // enemyManager.Undistract();
         }
     }
 }

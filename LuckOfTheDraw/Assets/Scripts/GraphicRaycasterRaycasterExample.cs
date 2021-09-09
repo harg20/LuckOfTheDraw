@@ -11,6 +11,11 @@ public class GraphicRaycasterRaycasterExample : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
+        if (GameObject.FindGameObjectsWithTag("MainCanvas").Length > 1)
+        {
+            Destroy(GameObject.FindGameObjectsWithTag("MainCanvas")[1]);
+        }
         //Fetch the Raycaster from the GameObject (the Canvas)
         m_Raycaster = GetComponent<GraphicRaycaster>();
         //Fetch the Event System from the Scene
@@ -43,6 +48,10 @@ public class GraphicRaycasterRaycasterExample : MonoBehaviour
                     {
                         result.gameObject.GetComponent<DragCard>().TaskOnClick();
                     }
+                }
+                if (result.gameObject.tag == "CardUISprite")
+                {
+                    result.gameObject.GetComponent<AddCardToHand>().AddToHand();
                 }
             }
         }

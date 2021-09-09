@@ -11,18 +11,22 @@ public class GenerateHand : MonoBehaviour
     public int handSize = 6;
     public float offset = 50;
     public float cardscale = .75f;
+    public bool reloading = false;
  
     
     // Start is called before the first frame update
     void Start()
     {
         cards = cardData.rarityScaledList;
-        NewHand();
+        StartCoroutine("NewHand");
+        
         //cardData.restart();
     }
  
-    public void NewHand()
+    public IEnumerator NewHand()
     {
+        reloading = true;
+        yield return new WaitForSeconds(.5f);
         cards = cardData.rarityScaledList;
        
         for (int i = hand.Count; i < handSize; i++)
@@ -35,13 +39,13 @@ public class GenerateHand : MonoBehaviour
             GameObject handcard = Instantiate(cardTemplate, transform);
             hand.Add(handcard);
             
-            handcard.transform.localScale = new Vector3(cardscale, cardscale, cardscale);
+            //handcard.transform.localScale = new Vector3(cardscale, cardscale, cardscale);
             handcard.GetComponent<CardDisplay>().card = cards[randcard];
             handcard.name  = handcard.GetComponent<CardDisplay>().card.name + ", " + i;
-            handcard.transform.position = new Vector3((i + 1) * offset, transform.position.y, 0);
-           
+            //handcard.transform.position = new Vector3((i + 1) * offset, transform.position.y, 0);
+            yield return new WaitForSeconds(.3f);
         }
-
+        reloading = false;
     }
 
     public void RemoveCard()
@@ -57,6 +61,21 @@ public class GenerateHand : MonoBehaviour
 
     }
     
+    public void AddCardToHand(Card card)
+    {
+        if (hand.Count < handSize)
+        {
+            GameObject handcard = Instantiate(cardTemplate, transform);
+            hand.Add(handcard);
+
+            //handcard.transform.localScale = new Vector3(cardscale, cardscale, cardscale);
+            handcard.GetComponent<CardDisplay>().card = card;
+            handcard.name = handcard.GetComponent<CardDisplay>().card.name + ", " + hand.IndexOf(handcard);
+            handcard.transform.position = new Vector3((hand.IndexOf(handcard) + 1) * offset, transform.position.y, 0);
+           
+        }
+
+    }
 
    public void Reorder(GameObject card)
     {
@@ -82,6 +101,7 @@ public class GenerateHand : MonoBehaviour
                 {
 
                     hand.Insert(i, card);
+                    transform.GetChild(card.transform.GetSiblingIndex()).SetSiblingIndex(i);
                     break;
                 }
               

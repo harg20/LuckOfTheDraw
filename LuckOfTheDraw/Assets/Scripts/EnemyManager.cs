@@ -14,10 +14,10 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // portal = GameObject.FindGameObjectWithTag("portal");
+         //portal = GameObject.FindGameObjectWithTag("portal");
         //portal.SetActive(false);
         // enemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
-        // Player = GameObject.FindGameObjectWithTag("Player");
+         Player = GameObject.FindGameObjectWithTag("Player");
         // cam = Camera.main;
         
         if (FindObjectsOfType<EnemyManager>().Length  == 1)
@@ -38,8 +38,9 @@ public class EnemyManager : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
         cam = Camera.main;
         shooters.Clear();
+        
     }
-    public void TargetPlayer()
+    /*public void TargetPlayer()
     {
         // base decision making for all AI
         for(int i = 0; i < enemies.Count; i++)
@@ -125,6 +126,15 @@ public class EnemyManager : MonoBehaviour
             enemies[i].GetComponent<Enemy>().distracted = false;
         }
     }
+    */
+    public void AddShooter(GameObject shooter)
+    {
+        shooters.Add(shooter);
+    }
+    public void RemoveShooter(GameObject shooter)
+    {
+        shooters.Remove(shooter);
+    }
     public void RemoveEnemy(GameObject enemy)
     {
         if (enemies.Count == 1)
@@ -135,14 +145,17 @@ public class EnemyManager : MonoBehaviour
             
         }
             enemies.Remove(enemy);
-        if (shooters.Contains(enemy)) shooters.Remove(enemy);
+        
 
         if (enemies.Count == 0)
         {
             portal.SetActive(true);
         }
     }
-
+    public void AddEnemy(GameObject Enemy)
+    {
+        enemies.Add(Enemy);
+    }
     public void ShootPlayer()
     {
 
@@ -156,9 +169,5 @@ public class EnemyManager : MonoBehaviour
     }
    
     // Update is called once per frame
-    void Update()
-    {
-        TargetPlayer();
-
-    }
+   
 }

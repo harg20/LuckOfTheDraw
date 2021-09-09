@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637585805278036762
-    m_Hash: 3546219553
+      ticks: 637608289374941137
+    m_Hash: 2174611164
   m_LockFileStatus:
     m_FilePath: C:/Users/Harry/Documents/GitHub/LuckOfTheDraw/LuckOfTheDraw/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637585805576046757
-    m_Hash: 628799416
+      ticks: 637608289375110682
+    m_Hash: 478802865
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,6 +22,89 @@ m_LocalPackages:
 m_ProjectPath: C:/Users/Harry/Documents/GitHub/LuckOfTheDraw/LuckOfTheDraw/Packages
 m_EditorVersion: 2021.1.10f1 (b15f561b2cef)
 m_ResolvedPackages:
+- packageId: com.unity.animation.rigging@1.0.3
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.3
+  source: 1
+  resolvedPath: C:\Users\Harry\Documents\GitHub\LuckOfTheDraw\LuckOfTheDraw\Library\PackageCache\com.unity.animation.rigging@1.0.3
+  assetPath: Packages/com.unity.animation.rigging
+  name: com.unity.animation.rigging
+  displayName: Animation Rigging
+  author:
+    name: 
+    email: 
+    url: 
+  category: Animation
+  type: 
+  description: Animation Rigging toolkit using Unity's Animation C# Jobs
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 0.1.2-preview
+    - 0.1.4-preview
+    - 0.2.1-preview
+    - 0.2.2-preview
+    - 0.2.3-preview
+    - 0.2.5-preview
+    - 0.2.6-preview
+    - 0.2.7-preview
+    - 0.3.2-preview
+    - 0.3.3-preview
+    - 0.3.4-preview
+    - 1.0.2
+    - 1.0.3
+    - 1.1.0
+    compatible:
+    - 1.0.3
+    - 1.1.0
+    verified: 1.0.3
+  dependencies:
+  - name: com.unity.burst
+    version: 1.3.4
+  - name: com.unity.test-framework
+    version: 1.1.14
+  resolvedDependencies:
+  - name: com.unity.burst
+    version: 1.5.4
+  - name: com.unity.mathematics
+    version: 1.2.1
+  - name: com.unity.test-framework
+    version: 1.1.24
+  - name: com.unity.ext.nunit
+    version: 1.0.6
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  - name: com.unity.modules.jsonserialize
+    version: 1.0.0
+  keywords:
+  - Animation
+  - Rigging
+  - Constraints
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
+  hideInEditor: 1
+  entitlements:
+    isAllowed: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637338778170000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.animation.rigging.git
+    revision: 536ae6adeb6f1066ee89b6938f6ba5828ea92e5f
+    path: 
+  unityLifecycle:
+    version: 1.0.3
+    nextVersion: 
 - packageId: com.unity.collab-proxy@1.5.7
   testable: 0
   isDirectDependency: 1
@@ -62,6 +145,7 @@ m_ResolvedPackages:
     - 1.3.7
     - 1.3.8
     - 1.3.9
+    - 1.4.9
     - 1.5.7
     - 2.0.0-preview.6
     - 2.0.0-preview.8
@@ -115,7 +199,7 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637551413290000000
   documentationUrl: 
   hasRepository: 1
   repository:
@@ -169,10 +253,14 @@ m_ResolvedPackages:
     - 3.0.1
     - 3.0.2
     - 3.0.3
+    - 3.0.4
+    - 3.0.5
     - 3.0.6
+    - 3.0.7
     compatible:
     - 3.0.6
-    verified: 3.0.6
+    - 3.0.7
+    verified: 3.0.7
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -192,7 +280,7 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637545389350000000
   documentationUrl: 
   hasRepository: 1
   repository:
@@ -236,10 +324,13 @@ m_ResolvedPackages:
     - 2.0.2
     - 2.0.3
     - 2.0.5
+    - 2.0.7
     - 2.0.8
+    - 2.0.9
     compatible:
     - 2.0.8
-    verified: 2.0.8
+    - 2.0.9
+    verified: 2.0.9
   dependencies:
   - name: com.unity.test-framework
     version: 1.1.9
@@ -265,7 +356,7 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637562620210000000
   documentationUrl: 
   hasRepository: 1
   repository:
@@ -384,10 +475,15 @@ m_ResolvedPackages:
     - 1.1.18
     - 1.1.19
     - 1.1.20
+    - 1.1.22
     - 1.1.24
+    - 1.1.26
+    - 1.1.27
     compatible:
     - 1.1.24
-    verified: 1.1.24
+    - 1.1.26
+    - 1.1.27
+    verified: 1.1.27
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -417,12 +513,12 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637505702940000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
-    url: https://github.com/Unity-Technologies/com.unity.test-framework.git
+    url: git+https://github.com/Unity-Technologies/com.unity.test-framework.git
     revision: e6fe8892689398c0d9aba4587e0ba69edc3d82b8
     path: 
   unityLifecycle:
@@ -502,6 +598,9 @@ m_ResolvedPackages:
     - 1.5.0
     - 1.5.1
     - 1.5.3
+    - 1.5.4
+    - 1.5.5
+    - 1.5.6
     - 2.0.0
     - 2.0.1-preview.1
     - 2.0.1
@@ -520,6 +619,9 @@ m_ResolvedPackages:
     - 2.1.0
     - 2.1.1
     - 2.1.3
+    - 2.1.4
+    - 2.1.5
+    - 2.1.6
     - 3.0.0-preview.1
     - 3.0.0-preview.3
     - 3.0.0-preview.4
@@ -534,6 +636,8 @@ m_ResolvedPackages:
     - 3.0.0
     - 3.0.1
     - 3.0.3
+    - 3.0.4
+    - 3.0.5
     - 3.0.6
     compatible:
     - 3.0.6
@@ -566,7 +670,7 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637547111200000000
   documentationUrl: 
   hasRepository: 1
   repository:
@@ -615,6 +719,7 @@ m_ResolvedPackages:
     - 1.2.15
     - 1.2.16
     - 1.2.17
+    - 1.2.18
     - 1.3.0-preview.2
     - 1.3.0-preview.3
     - 1.3.0-preview.5
@@ -627,6 +732,7 @@ m_ResolvedPackages:
     - 1.3.4
     - 1.3.5
     - 1.3.6
+    - 1.3.7
     - 1.4.0-preview.1
     - 1.4.0-preview.2
     - 1.4.0-preview.3
@@ -639,6 +745,9 @@ m_ResolvedPackages:
     - 1.4.3
     - 1.4.4
     - 1.4.5
+    - 1.4.6
+    - 1.4.7
+    - 1.4.8
     - 1.5.0-pre.2
     - 1.5.0-preview.1
     - 1.5.0-preview.2
@@ -648,9 +757,21 @@ m_ResolvedPackages:
     - 1.5.1-pre.1
     - 1.5.1-pre.2
     - 1.5.1-pre.3
+    - 1.5.2
+    - 1.5.4
     - 1.5.5
+    - 1.6.0-pre.1
+    - 1.6.0-pre.3
+    - 1.6.0-pre.4
+    - 1.6.0-pre.5
+    - 1.6.1
     compatible:
     - 1.5.5
+    - 1.6.0-pre.1
+    - 1.6.0-pre.3
+    - 1.6.0-pre.4
+    - 1.6.0-pre.5
+    - 1.6.1
     verified: 1.5.5
   dependencies:
   - name: com.unity.modules.director
@@ -688,7 +809,7 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637557616440000000
   documentationUrl: 
   hasRepository: 1
   repository:
@@ -2676,7 +2797,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: library
+  type: 
   description: 'Newtonsoft Json for use in Unity projects and Unity packages. Currently
     synced to version 12.0.2.
 
@@ -2691,9 +2812,19 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
+    - 1.0.0-preview.2
+    - 1.0.0-preview.3
+    - 1.0.0-preview.4
+    - 1.0.1-preview.1
+    - 1.1.2
+    - 2.0.0-preview
+    - 2.0.0-preview.1
+    - 2.0.0-preview.2
     - 2.0.0
+    - 2.0.1-preview.1
     compatible:
     - 2.0.0
+    - 2.0.1-preview.1
     verified: 2.0.0
   dependencies: []
   resolvedDependencies: []
@@ -2710,7 +2841,7 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637237898320000000
   documentationUrl: 
   hasRepository: 1
   repository:
@@ -2720,4 +2851,218 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 2.0.0
+    nextVersion: 
+- packageId: com.unity.burst@1.5.4
+  testable: 0
+  isDirectDependency: 0
+  version: 1.5.4
+  source: 1
+  resolvedPath: C:\Users\Harry\Documents\GitHub\LuckOfTheDraw\LuckOfTheDraw\Library\PackageCache\com.unity.burst@1.5.4
+  assetPath: Packages/com.unity.burst
+  name: com.unity.burst
+  displayName: Burst
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: Burst is a compiler that translates from IL/.NET bytecode to highly
+    optimized native code using LLVM.
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 0.2.4-preview.5
+    - 0.2.4-preview.7
+    - 0.2.4-preview.11
+    - 0.2.4-preview.12
+    - 0.2.4-preview.13
+    - 0.2.4-preview.14
+    - 0.2.4-preview.15
+    - 0.2.4-preview.16
+    - 0.2.4-preview.17
+    - 0.2.4-preview.18
+    - 0.2.4-preview.19
+    - 0.2.4-preview.20
+    - 0.2.4-preview.21
+    - 0.2.4-preview.22
+    - 0.2.4-preview.23
+    - 0.2.4-preview.24
+    - 0.2.4-preview.25
+    - 0.2.4-preview.30
+    - 0.2.4-preview.31
+    - 0.2.4-preview.33
+    - 0.2.4-preview.34
+    - 0.2.4-preview.37
+    - 0.2.4-preview.41
+    - 0.2.4-preview.45
+    - 0.2.4-preview.48
+    - 0.2.4-preview.50
+    - 1.1.0-preview.2
+    - 1.1.0-preview.3
+    - 1.1.0-preview.4
+    - 1.1.1
+    - 1.1.2
+    - 1.1.3-preview.3
+    - 1.2.0-preview.1
+    - 1.2.0-preview.5
+    - 1.2.0-preview.6
+    - 1.2.0-preview.8
+    - 1.2.0-preview.9
+    - 1.2.0-preview.10
+    - 1.2.0-preview.11
+    - 1.2.0-preview.12
+    - 1.2.0
+    - 1.2.1
+    - 1.2.2
+    - 1.2.3
+    - 1.3.0-preview.1
+    - 1.3.0-preview.2
+    - 1.3.0-preview.3
+    - 1.3.0-preview.4
+    - 1.3.0-preview.5
+    - 1.3.0-preview.6
+    - 1.3.0-preview.7
+    - 1.3.0-preview.8
+    - 1.3.0-preview.9
+    - 1.3.0-preview.10
+    - 1.3.0-preview.11
+    - 1.3.0-preview.12
+    - 1.3.0-preview.13
+    - 1.3.0
+    - 1.3.1
+    - 1.3.2
+    - 1.3.3
+    - 1.3.4
+    - 1.3.5
+    - 1.3.6
+    - 1.3.7
+    - 1.3.8
+    - 1.3.9
+    - 1.4.0-pre.1
+    - 1.4.0-preview.1
+    - 1.4.0-preview.2
+    - 1.4.0-preview.3
+    - 1.4.0-preview.4
+    - 1.4.0-preview.5
+    - 1.4.1-pre.1
+    - 1.4.1-pre.2
+    - 1.4.1
+    - 1.4.2
+    - 1.4.3
+    - 1.4.4-preview.1
+    - 1.4.4-preview.2
+    - 1.4.4
+    - 1.4.5
+    - 1.4.6
+    - 1.4.7
+    - 1.4.8
+    - 1.5.0-pre.3
+    - 1.5.0-pre.4
+    - 1.5.0-pre.5
+    - 1.5.0
+    - 1.5.1
+    - 1.5.2
+    - 1.5.3
+    - 1.5.4
+    - 1.6.0-pre.2
+    compatible:
+    - 1.5.4
+    - 1.6.0-pre.2
+    verified: 1.5.4
+  dependencies:
+  - name: com.unity.mathematics
+    version: 1.2.1
+  resolvedDependencies:
+  - name: com.unity.mathematics
+    version: 1.2.1
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
+  hideInEditor: 1
+  entitlements:
+    isAllowed: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637568919480000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/burst.git
+    revision: 1253fdbbb9980df52e2be5de1e0c0ffe54a1dcbf
+    path: 
+  unityLifecycle:
+    version: 1.5.4
+    nextVersion: 
+- packageId: com.unity.mathematics@1.2.1
+  testable: 0
+  isDirectDependency: 0
+  version: 1.2.1
+  source: 1
+  resolvedPath: C:\Users\Harry\Documents\GitHub\LuckOfTheDraw\LuckOfTheDraw\Library\PackageCache\com.unity.mathematics@1.2.1
+  assetPath: Packages/com.unity.mathematics
+  name: com.unity.mathematics
+  displayName: Mathematics
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: Unity's C# SIMD math library providing vector types and math functions
+    with a shader like syntax.
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 0.0.12-preview.2
+    - 0.0.12-preview.5
+    - 0.0.12-preview.8
+    - 0.0.12-preview.10
+    - 0.0.12-preview.11
+    - 0.0.12-preview.13
+    - 0.0.12-preview.17
+    - 0.0.12-preview.19
+    - 0.0.12-preview.20
+    - 1.0.0-preview.1
+    - 1.0.1
+    - 1.1.0-preview.1
+    - 1.1.0
+    - 1.2.1
+    compatible:
+    - 1.2.1
+    verified: 1.2.1
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - unity
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
+  hideInEditor: 1
+  entitlements:
+    isAllowed: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637324062630000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: git+https://github.com/Unity-Technologies/Unity.Mathematics.git
+    revision: 71412d94b7a0b0fdbb3195a5e6559bf6a761e91a
+    path: 
+  unityLifecycle:
+    version: 1.2.1
     nextVersion: 
